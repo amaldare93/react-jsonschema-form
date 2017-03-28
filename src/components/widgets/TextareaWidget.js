@@ -19,7 +19,7 @@ function TextareaWidget(props) {
   return (
     <textarea
       id={id}
-      className="form-control"
+      className="rjsf-form-control"
       value={typeof value === "undefined" ? "" : value}
       placeholder={placeholder}
       required={required}

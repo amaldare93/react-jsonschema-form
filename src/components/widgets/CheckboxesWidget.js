@@ -16,10 +16,10 @@ function CheckboxesWidget(props) {
   const { id, disabled, options, value, autofocus, readonly, onChange } = props;
   const { enumOptions, inline } = options;
   return (
-    <div className="checkboxes" id={id}>
+    <div className="rjsf-checkboxes" id={id}>
       {enumOptions.map((option, index) => {
         const checked = value.indexOf(option.value) !== -1;
-        const disabledCls = disabled || readonly ? "disabled" : "";
+        const disabledCls = disabled || readonly ? "rjsf-disabled" : "";
         const checkbox = (
           <span>
             <input
@@ -41,10 +41,12 @@ function CheckboxesWidget(props) {
           </span>
         );
         return inline
-          ? <label key={index} className={`checkbox-inline ${disabledCls}`}>
+          ? <label
+              key={index}
+              className={`rjsf-checkbox-inline ${disabledCls}`}>
               {checkbox}
             </label>
-          : <div key={index} className={`checkbox ${disabledCls}`}>
+          : <div key={index} className={`rjsf-checkbox ${disabledCls}`}>
               <label>
                 {checkbox}
               </label>

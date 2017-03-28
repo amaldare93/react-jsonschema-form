@@ -14,7 +14,10 @@ function CheckboxWidget(props) {
     onChange,
   } = props;
   return (
-    <div className={`checkbox ${disabled || readonly ? "disabled" : ""}`}>
+    <div
+      className={
+        `rjsf-checkbox ${disabled || readonly ? "rjsf-disabled" : ""}`
+      }>
       {schema.description &&
         <DescriptionField description={schema.description} />}
       <label>

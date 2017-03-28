@@ -37,9 +37,9 @@ function IconBtn(props) {
   return (
     <button
       type="button"
-      className={`btn btn-${type} ${className}`}
+      className={`rjsf-btn rjsf-btn-${type} ${className}`}
       {...otherProps}>
-      <i className={`glyphicon glyphicon-${icon}`} />
+      <i className={`rjsf-glyphicon rjsf-glyphicon-${icon}`} />
     </button>
   );
 }
@@ -55,20 +55,20 @@ function DefaultArrayItem(props) {
   return (
     <div key={props.index} className={props.className}>
 
-      <div className={props.hasToolbar ? "col-xs-9" : "col-xs-12"}>
+      <div className={props.hasToolbar ? "rjsf-col-xs-9" : "rjsf-col-xs-12"}>
         {props.children}
       </div>
 
       {props.hasToolbar &&
-        <div className="col-xs-3 array-item-toolbox">
+        <div className="rjsf-col-xs-3 rjsf-array-item-toolbox">
           <div
-            className="btn-group"
+            className="rjsf-btn-group"
             style={{ display: "flex", justifyContent: "space-around" }}>
 
             {(props.hasMoveUp || props.hasMoveDown) &&
               <IconBtn
                 icon="arrow-up"
-                className="array-item-move-up"
+                className="rjsf-array-item-move-up"
                 tabIndex="-1"
                 style={btnStyle}
                 disabled={props.disabled || props.readonly || !props.hasMoveUp}
@@ -78,7 +78,7 @@ function DefaultArrayItem(props) {
             {(props.hasMoveUp || props.hasMoveDown) &&
               <IconBtn
                 icon="arrow-down"
-                className="array-item-move-down"
+                className="rjsf-array-item-move-down"
                 tabIndex="-1"
                 style={btnStyle}
                 disabled={
@@ -91,7 +91,7 @@ function DefaultArrayItem(props) {
               <IconBtn
                 type="danger"
                 icon="remove"
-                className="array-item-remove"
+                className="rjsf-array-item-remove"
                 tabIndex="-1"
                 style={btnStyle}
                 disabled={props.disabled || props.readonly}
@@ -118,13 +118,13 @@ function DefaultFixedArrayFieldTemplate(props) {
 
       {props.schema.description &&
         <div
-          className="field-description"
+          className="rjsf-field-description"
           key={`field-description-${props.idSchema.$id}`}>
           {props.schema.description}
         </div>}
 
       <div
-        className="row array-item-list"
+        className="rjsf-row rjsf-array-item-list"
         key={`array-item-list-${props.idSchema.$id}`}>
         {props.items && props.items.map(DefaultArrayItem)}
       </div>
@@ -159,7 +159,7 @@ function DefaultNormalArrayFieldTemplate(props) {
         />}
 
       <div
-        className="row array-item-list"
+        className="rjsf-row array-item-list"
         key={`array-item-list-${props.idSchema.$id}`}>
         {props.items && props.items.map(p => DefaultArrayItem(p))}
       </div>
@@ -319,7 +319,7 @@ class ArrayField extends Component {
           onBlur,
         });
       }),
-      className: `field field-array field-array-of-${itemsSchema.type}`,
+      className: `rjsf-field rjsf-field-array rjsf-field-array-of-${itemsSchema.type}`,
       DescriptionField,
       disabled,
       idSchema,
@@ -442,7 +442,7 @@ class ArrayField extends Component {
     // These are the props passed into the render function
     const arrayProps = {
       canAdd,
-      className: "field field-array field-array-fixed-items",
+      className: "rjsf-field rjsf-field-array rjsf-field-array-fixed-items",
       disabled,
       idSchema,
       items: items.map((item, index) => {
@@ -529,7 +529,7 @@ class ArrayField extends Component {
           autofocus={autofocus}
         />
       ),
-      className: "array-item",
+      className: "rjsf-array-item",
       disabled,
       hasToolbar: has.toolbar,
       hasMoveUp: has.moveUp,
@@ -545,12 +545,13 @@ class ArrayField extends Component {
 
 function AddButton({ onClick, disabled }) {
   return (
-    <div className="row">
-      <p className="col-xs-3 col-xs-offset-9 array-item-add text-right">
+    <div className="rjsf-row">
+      <p
+        className="rjsf-col-xs-3 rjsf-col-xs-offset-9 rjsf-array-item-add rjsf-text-right">
         <IconBtn
           type="info"
           icon="plus"
-          className="btn-add col-xs-12"
+          className="rjsf-btn-add rjsf-col-xs-12"
           tabIndex="0"
           onClick={onClick}
           disabled={disabled}

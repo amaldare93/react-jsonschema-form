@@ -33,7 +33,7 @@ function DateElement(props) {
     <SelectWidget
       schema={{ type: "integer" }}
       id={id}
-      className="form-control"
+      className="rjsf-form-control"
       options={{ enumOptions: rangeOptions(range[0], range[1]) }}
       placeholder={type}
       value={value}
@@ -119,7 +119,7 @@ class AltDateWidget extends Component {
   render() {
     const { id, disabled, readonly, autofocus, registry, onBlur } = this.props;
     return (
-      <ul className="list-inline">
+      <ul className="rjsf-list-inline">
         {this.dateElementProps.map((elemProps, i) => (
           <li key={i}>
             <DateElement
@@ -135,14 +135,17 @@ class AltDateWidget extends Component {
           </li>
         ))}
         <li>
-          <a href="#" className="btn btn-info btn-now" onClick={this.setNow}>
+          <a
+            href="#"
+            className="rjsf-btn rjsf-btn-info rjsf-btn-now"
+            onClick={this.setNow}>
             Now
           </a>
         </li>
         <li>
           <a
             href="#"
-            className="btn btn-warning btn-clear"
+            className="rjsf-btn rjsf-btn-warning rjsf-btn-clear"
             onClick={this.clear}>
             Clear
           </a>

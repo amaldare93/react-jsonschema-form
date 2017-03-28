@@ -21,7 +21,7 @@ function BaseInput(props) {
   return (
     <input
       {...inputProps}
-      className="form-control"
+      className="rjsf-form-control"
       readOnly={readonly}
       disabled={disabled}
       autoFocus={autofocus}

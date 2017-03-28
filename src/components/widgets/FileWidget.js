@@ -32,7 +32,7 @@ function FilesInfo(props) {
     return null;
   }
   return (
-    <ul className="file-info">
+    <ul className="rjsf-file-info">
       {filesInfo.map((fileInfo, key) => {
         const { name, size, type } = fileInfo;
         return (

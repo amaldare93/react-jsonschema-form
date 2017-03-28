@@ -38,7 +38,7 @@ function Label(props) {
     return <div />;
   }
   return (
-    <label className="control-label" htmlFor={id}>
+    <label className="rjsf-control-label" htmlFor={id}>
       {required ? label + REQUIRED_FIELD_SYMBOL : label}
     </label>
   );
@@ -51,9 +51,9 @@ function Help(props) {
     return <div />;
   }
   if (typeof help === "string") {
-    return <p className="help-block">{help}</p>;
+    return <p className="rjsf-help-block">{help}</p>;
   }
-  return <div className="help-block">{help}</div>;
+  return <div className="rjsf-help-block">{help}</div>;
 }
 
 function ErrorList(props) {
@@ -64,9 +64,9 @@ function ErrorList(props) {
   return (
     <div>
       <p />
-      <ul className="error-detail bs-callout bs-callout-info">
+      <ul className="rjsf-error-detail rjsf-bs-callout rjsf-bs-callout-info">
         {errors.map((error, index) => {
-          return <li className="text-danger" key={index}>{error}</li>;
+          return <li className="rjsf-text-danger" key={index}>{error}</li>;
         })}
       </ul>
     </div>
