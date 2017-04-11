@@ -187,10 +187,12 @@ function SchemaFieldRender(props) {
   const help = uiSchema["ui:help"];
   const hidden = uiSchema["ui:widget"] === "hidden";
   const classNames = [
-    "form-group",
-    "field",
-    `field-${type}`,
-    errors && errors.length > 0 ? "field-error has-error has-danger" : "",
+    "rjsf-form-group",
+    "rjsf-field",
+    `rjsf-field-${type}`,
+    errors && errors.length > 0
+      ? "rjsf-field-error rjsf-has-error rjsf-has-danger"
+      : "",
     uiSchema.classNames,
   ]
     .join(" ")
